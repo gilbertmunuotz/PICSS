@@ -15,19 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('auth.login');});
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
+Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');});
 
 Route::get('/redirects', [Homecontroller::class, 'redirecting']); //Loads & Redirects The User Type Account
 
@@ -44,12 +35,13 @@ Route::post('/UpdatingStatus/{id}', [Homecontroller::class, 'updatestatus']); //
 
 Route::get('/Homepage', [Staffcontroller::class, 'homee']); //Returns Estates Homepage
 Route::get('/MyDevices', [Staffcontroller::class, 'devices']); //Returns all Devices Available
-Route::get('/EditDevices/{id}', [Staffcontroller::class, 'edit_devices']);//Returns the Edit Devices Page/View
+Route::get('/EditDevices/{id}', [Staffcontroller::class, 'edit_devices']); //Returns the Edit Devices Page/View
 
 Route::get('/MyTasks', [Staffcontroller::class, 'tasks']); //Returns The Reported Tasks view Page
-Route::get('/DeleteMyTasks/{id}', [Staffcontroller::class, 'delete_tasks']);//Estate Deletes Tasks
+Route::get('/DeleteMyTasks/{id}', [Staffcontroller::class, 'delete_tasks']); //Estate Deletes Tasks
 Route::get('/EditTasks/{id}', [Staffcontroller::class, 'edit_tasks']); //Returns Edit Tasks Page/View 
 Route::post('/UpdateMyTasks/{id}', [Staffcontroller::class, 'update_mytask']); //Estate Officer Updates His Tasks
 
 Route::get('/RequestedDevices', [Staffcontroller::class, 'requested_devices']); //Returns The Requested Devices Page
 Route::get('/EditReqDevices/{id}', [Staffcontroller::class, 'mydevices']);//Returns The Edit Devices Page
+Route::post('/EditRequestedDevices/{id}',[Staffcontroller::class, 'editRDevices']);//Estate Officer Edits Requested Devices

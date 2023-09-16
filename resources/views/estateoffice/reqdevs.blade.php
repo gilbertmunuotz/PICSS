@@ -39,7 +39,7 @@
 
                 @endif
 
-                <form class="user" method="POST" action="{{url('EditReqDevices', $alldevices->id)}}">
+                <form class="user" method="POST" action="{{url('EditRequestedDevices', $alldevices->id)}}">
                     @csrf
                     <div class="row">
                         <div class="col-3 mb-3" style="margin-left: 20px;">Name</div>
@@ -80,13 +80,6 @@
                         </div>
                     </div>
                     <br>
-
-                    <div class="row">
-                        <div class="col-3 mb-3" style="margin-left: 20px;">Status</div>
-                        <div class="col-6 mb-3">
-                            <input type="text" class="form-control form-control-user" value="" name="status" placeholder="required">
-                        </div>
-                    </div>
 
                     <div class="row" style="margin-top:4%">
                         <div class="col-4"></div>

@@ -108,7 +108,7 @@ class Homecontroller extends Controller
 
         $mydevices->dateofregistration = $request->dateofregistration;
 
-        $mydevices->status = $request->status;
+        $mydevices->statuses = $request->statuses;
 
         $mydevices->save();
 

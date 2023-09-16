@@ -36,7 +36,7 @@
                 <!-- Topbar -->
                 @include('staff.header')
                 <!-- End of Topbar -->
-                
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -73,7 +73,7 @@
                                                 <td>{{$tasks->dateofreport}}</td>
                                                 <td>{{$tasks->problemtype}}</td>
                                                 <td>{{$tasks->problemdescription}}</td>
-                                                <td>{{$tasks->statuses}}</td>
+                                                <td><span class="badge badge-success">{{$tasks->statuses}}</td></span>
                                                 <td>
                                                     <a class="btn btn-outline-primary" href="{{url('EditTasks',$tasks->id)}}">Edit</a>
 

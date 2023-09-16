@@ -90,7 +90,27 @@ class Staffcontroller extends Controller
     
         $alldevices = Requests::find($id);
 
-        return view('estateoffice.reqdevs', compact('alldevices'));
+      return view('estateoffice.reqdevs', compact('alldevices'));
+    }
+
+    public function editRDevices(Request $request, $id)
+    {
+    
+        $Rdevices = Requests::find($id);
+
+        $Rdevices->name = $request->name;
+
+        $Rdevices->department = $request->department;
+        
+        $Rdevices->dateofrequests = $request->dateofrequests;
+
+        $Rdevices->devicename = $request->devicename;
+
+        $Rdevices->devicedescription = $request->devicedescription;
+
+        $Rdevices->save();
+
+        return redirect()->back()->with('message', 'Updated Succesfully');
 
     }
   

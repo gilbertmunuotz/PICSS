@@ -76,7 +76,7 @@
                     <div class="row">
                         <div class="col-3 mb-3" style="margin-left: 20px;">Status</div>
                         <div class="col-6 mb-3">
-                            <input type="text" class="form-control form-control-user" value="{{$edit->status}}" name="status" placeholder="required">
+                            <input type="text" class="form-control form-control-user" value="{{$edit->statuses}}" name="statuses" placeholder="required">
                         </div>
                     </div>
                     <br>

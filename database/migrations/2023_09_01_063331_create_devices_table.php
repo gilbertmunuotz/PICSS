@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('itemname')->nullable();
             $table->string('codeno')->unique();
-            $table->string('office')->nullable();
+            $table->string('office')->nullable();   
             $table->string('dateofregistration')->nullable();
             $table->timestamps();
         });

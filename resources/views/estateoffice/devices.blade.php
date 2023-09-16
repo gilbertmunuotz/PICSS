@@ -73,7 +73,7 @@
                                                 <td>{{$datas->codeno}}</td>
                                                 <td>{{$datas->office}}</td>
                                                 <td>{{$datas->dateofregistration}}</td>
-                                                <td><span class="badge badge-success">{{$datas->status}}</span></td>
+                                                <td><span class="badge badge-success">{{$datas->statuses}}</span></td>
                                                 <td>
                                                     <a class="btn btn-outline-primary" href="{{url('EditDevices', $datas->id)}}">Edit</a>
                                                 </td>
