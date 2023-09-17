@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\Staffcontroller;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +46,6 @@ Route::post('/UpdateMyTasks/{id}', [Staffcontroller::class, 'update_mytask']); /
 Route::get('/RequestedDevices', [Staffcontroller::class, 'requested_devices']); //Returns The Requested Devices Page
 Route::get('/EditReqDevices/{id}', [Staffcontroller::class, 'mydevices']);//Returns The Edit Devices Page
 Route::post('/EditRequestedDevices/{id}',[Staffcontroller::class, 'editRDevices']);//Estate Officer Edits Requested Devices
+
+
+Route::get('/systemusers', [Admincontroller::class, 'sys_users']);//Returns The System Users Page
