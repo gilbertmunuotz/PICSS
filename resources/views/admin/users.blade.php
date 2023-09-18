@@ -42,6 +42,27 @@
                                     <th>E-mail</th>
                                     <th>Action</th>
                                 </tr>
+                                @php
+                                $x = 1;
+                                @endphp
+                                @foreach($users as $userss)
+                                <tbody>
+                                    <tr>
+                                        <td> {{ $x }} </td>
+                                        <td>{{$userss->id}}</td>
+                                        <td>{{$userss->name}}</td>
+                                        <td>{{$userss->usertype}}</td>
+                                        <td></td>
+                                        <td>
+                                            <a class="btn btn-outline-primary" href="">Edit</a>
+                                            <a class="btn btn-outline-danger" onclick="return confirm('This Action Cant Be Undone')" href="{{url('DeleteUsers', $userss->id)}}">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                @php
+                                $x++;
+                                @endphp
+                                @endforeach
                             </table>
 
                         </div>
