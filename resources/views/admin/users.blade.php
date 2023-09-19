@@ -54,7 +54,7 @@
                                         <td>{{$userss->usertype}}</td>
                                         <td></td>
                                         <td>
-                                            <a class="btn btn-outline-primary" href="">Edit</a>
+                                            <a class="btn btn-outline-primary" href="{{url('Myusers', $userss->id)}}">Edit</a>
                                             <a class="btn btn-outline-danger" onclick="return confirm('This Action Cant Be Undone')" href="{{url('DeleteUsers', $userss->id)}}">Delete</a>
                                         </td>
                                     </tr>

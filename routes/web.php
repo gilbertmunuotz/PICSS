@@ -50,3 +50,5 @@ Route::post('/EditRequestedDevices/{id}',[Staffcontroller::class, 'editRDevices'
 
 Route::get('/systemusers', [Admincontroller::class, 'sys_users']);//Returns The System Users Page
 Route::get('/DeleteUsers/{id}',[Admincontroller::class, 'delete_users']);//Deletes system Users
+Route::get('/Myusers/{id}', [Admincontroller::class, 'edit_users']);//Returns Users page Informations
+Route::post('/UpdateMyUsers/{id}', [Admincontroller::class, 'update_myusers']);//Admin Updates users Information
